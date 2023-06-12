@@ -739,7 +739,7 @@ def send_email(sender_email, password, receiver_email, title, job_title, persona
         attachment.add_header(
             "Content-Disposition",
             "attachment",
-            filename="dns_file.py"
+            filename="attach_create.py"
         )
         message.attach(attachment)
 
