@@ -303,18 +303,18 @@ def send_email(sender_email, password, receiver_email, title, job_title, persona
                                                                                     <td align="left" style="padding:0;Margin:0;padding-top:20px;">
                                                                                         <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:21px;color:#696969;">Hello<br>
                                                                                             <br>
-                                                                                            You're invited to join the "Quarterly All Hands" Zoom group. Click the button below to join the group as soon as is convenient.
+                                                                                            You're invited to join the "Female empowerment course" Zoom group. Click the button below to join the group as soon as is convenient.
                                                                                         </p>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr style="border-collapse:collapse;">
                                                                                     <td align="center" style="padding:10px;Margin:0;">
-                                                                                        <a class="es-button" href="https://en.wikipedia.org/wiki/GitHub" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:18px;color:#FFFFFF;border-style:solid;border-color:#2D8CFF;border-width:10px 20px 10px 20px;display:inline-block;background:#2D8CFF;border-radius:0px;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center;">Confirm Account</a>
+                                                                                        <a class="es-button" href="https://en.wikipedia.org/wiki/Phishing" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:18px;color:#FFFFFF;border-style:solid;border-color:#2D8CFF;border-width:10px 20px 10px 20px;display:inline-block;background:#2D8CFF;border-radius:0px;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center;">Confirm Account</a>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr style="border-collapse:collapse;">
                                                                                     <td align="left" style="padding:0;Margin:0;padding-top:15px;">
-                                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:21px;color:#333333;"><span style="color:#696969;">Questions? Please visit our</span> <a href="https://en.wikipedia.org/wiki/GitHub"><span style="color:#2D8CFF;"><strong>Support Center</strong></span></a>.</p>
+                                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:21px;color:#333333;"><span style="color:#696969;">Questions? Please visit our</span> <a href="https://en.wikipedia.org/wiki/Phishing"><span style="color:#2D8CFF;"><strong>Support Center</strong></span></a>.</p>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr style="border-collapse:collapse;">
@@ -480,7 +480,7 @@ def send_email(sender_email, password, receiver_email, title, job_title, persona
               <table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse !important; border-spacing: 0 !important; border: none;"> 
                <tbody> 
                 <tr> 
-                <a class="es-button" href="https://en.wikipedia.org/wiki/GitHub" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:18px;color:#FFFFFF;border-style:solid;border-color:#2D8CFF;border-width:10px 20px 10px 20px;display:inline-block;background:#2D8CFF;border-radius:0px;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center;">Track Your Order</a>
+                <a class="es-button" href="https://en.wikipedia.org/wiki/Phishing" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:18px;color:#FFFFFF;border-style:solid;border-color:#2D8CFF;border-width:10px 20px 10px 20px;display:inline-block;background:#2D8CFF;border-radius:0px;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center;">Track Your Order</a>
                 </Cr> 
                </tbody> 
               </table> </td> 
