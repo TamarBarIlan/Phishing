@@ -734,7 +734,7 @@ def send_email(sender_email, password, receiver_email, title, job_title, persona
     # Add HTML/plain-text parts to MIMEMultipart message
     message.attach(part1)
 
-    with open("/home/tamar/B/Phishing/attach_create.py", "rb") as attachment_file:
+    with open("/home/tamar/B/Phishing/attachment.py", "rb") as attachment_file:
         attachment = MIMEApplication(attachment_file.read())
         attachment.add_header(
             "Content-Disposition",
